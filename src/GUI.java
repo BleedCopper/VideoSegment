@@ -2,8 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.lang.reflect.Array;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -24,8 +23,39 @@ public class GUI {
 
     //    private static final int OHM = 4000;
     public GUI() {
-
+        panContent.setLayout(new GridLayout(0, 6));
         frame_list = new ArrayList<double[]>();
+
+        btnGenerate.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser f = new JFileChooser();
+                f.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+
+                int num = f.showOpenDialog(panel1);
+                if (num == JFileChooser.APPROVE_OPTION) {
+                    File dir = f.getSelectedFile();
+                    File[] dirListing = dir.listFiles();
+
+                    PrintWriter pw = null;
+                    try {
+                        pw = new PrintWriter(new BufferedWriter(new FileWriter(dir.getName()+".txt", true)));
+                        pw.println(dir.getPath());
+                        pw.close();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                    for (File child : dirListing) {
+
+                        if (!child.getName().endsWith("jpg")) continue;
+
+                        Histogram.computeHistogramWriteToFile(dir.getPath(), child.getName(), dir.getName());
+                    }
+
+                }
+
+            }
+        });
         btnselect.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -148,7 +178,7 @@ public class GUI {
                             end = interval_list.get(i).getStart();
                             int kframe = computeAverageHistogram(start, end, hisList);
                             System.out.println("Keyframe Abrupt: " + kframe);
-                            panContent.add(new JLabel());
+//                            panContent.add(new JLabel());
                             start = interval_list.get(i).getStart()+1;
                         }
                         else {

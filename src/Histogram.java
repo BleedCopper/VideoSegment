@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Histogram {
 
@@ -29,23 +30,27 @@ public class Histogram {
         }
     }
 
-    public static ArrayList<double[]> readHistogram(String PATH) {
-        ArrayList<double[]> fileHistogram = new ArrayList<double[]>();
+    public static ArrayList<Data> readHistogram(String PATH) {
+        ArrayList<Data> fileHistogram_list = new ArrayList<Data>();
 
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(PATH)));
             String folder = br.readLine();
             String line;
             while((line = br.readLine()) != null) {
+
+                String filename = line;
                 line = br.readLine();
                 String[] stringArrayOfHistogramValues = line.split(" ");
-                double[] temp = new double[159];
+                double[] histogram = new double[159];
                 int i=0;
                 for(String str: stringArrayOfHistogramValues) {
-                    temp[i] = Double.parseDouble(str);
+                    histogram[i] = Double.parseDouble(str);
                     i++;
                 }
-                fileHistogram.add(temp);
+
+                Data d = new Data(folder, filename, histogram);
+                fileHistogram_list.add(d);
             }
 
             //System.out.println(line);
@@ -58,7 +63,7 @@ public class Histogram {
             e.printStackTrace();
         }
 
-        return fileHistogram;
+        return fileHistogram_list;
     }
 
     public static double[] computeHistogram(String PATH, String FILENAME) {

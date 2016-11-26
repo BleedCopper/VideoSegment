@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="GUI">
-  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="BorderLayout" hgap="0" vgap="0">
+  <grid id="27dc6" binding="panMainContent" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
       <xy x="20" y="20" width="1198" height="967"/>
     </constraints>
@@ -33,20 +33,21 @@
           </component>
         </children>
       </grid>
-      <scrollpane id="61404">
+      <grid id="78963" binding="panContent" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints border-constraint="Center"/>
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="78963" binding="panContent" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-            <margin top="0" left="0" bottom="0" right="0"/>
-            <constraints/>
-            <properties/>
-            <border type="none"/>
-            <children/>
-          </grid>
+          <component id="217c5" class="javax.swing.JLabel" binding="lblImageIcon">
+            <constraints border-constraint="Center"/>
+            <properties>
+              <background color="-10295234"/>
+              <horizontalAlignment value="0"/>
+              <text value="No Image Displayed"/>
+            </properties>
+          </component>
         </children>
-      </scrollpane>
+      </grid>
     </children>
   </grid>
 </form>

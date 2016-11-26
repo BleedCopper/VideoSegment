@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Histogram {
 
@@ -32,7 +31,6 @@ public class Histogram {
 
     public static ArrayList<Data> readHistogram(String PATH) {
         ArrayList<Data> fileHistogram_list = new ArrayList<Data>();
-
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(PATH)));
             String folder = br.readLine();
@@ -41,6 +39,7 @@ public class Histogram {
 
                 String filename = line;
                 line = br.readLine();
+                System.out.println(line);
                 String[] stringArrayOfHistogramValues = line.split(" ");
                 double[] histogram = new double[159];
                 int i=0;

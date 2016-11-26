@@ -1,5 +1,4 @@
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -207,10 +206,11 @@ public class GUI {
 
 
                     panSpaneContent = new JPanel();
-                    panSpaneContent.setPreferredSize(new Dimension(100,120));
+//                    panSpaneContent.setPreferredSize(new Dimension(100,120));
                     panSpaneContent.setLayout(new BoxLayout(panSpaneContent,BoxLayout.X_AXIS));
 
                     System.out.println("HislITS:"+ hisList.size());
+                    int width = 0;
                     for(int i=0; i<hisList.size(); i++){
                         String filePath = hisList.get(i).getFolder_path()+"\\"+ hisList.get(i).getFilename();
 
@@ -221,6 +221,8 @@ public class GUI {
                         lblImageName.setHorizontalTextPosition(JLabel.CENTER);
                         JLabel lblImageIcon =  new JLabel(new ImageIcon(filePath));
 
+                        width += lblImageIcon.getIcon().getIconWidth();
+
 
                         imgPanel.add(lblImageIcon, BorderLayout.CENTER);
                         imgPanel.add(lblImageName, BorderLayout.SOUTH);
@@ -228,11 +230,12 @@ public class GUI {
                         panSpaneContent.add(imgPanel);
                         panSpaneContent.updateUI();
                     }
+                    panSpaneContent.setPreferredSize(new Dimension(width, 120));
                    // spImages.setViewportView(panSpaneContent);
 
                     spImages = new JScrollPane(panSpaneContent);
                     spImages.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-                    spImages.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+                    spImages.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
                     spImages.revalidate();
                     spImages.updateUI();
                     panContent.add(spImages,BorderLayout.SOUTH);

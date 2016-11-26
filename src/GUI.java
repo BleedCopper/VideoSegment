@@ -1,30 +1,38 @@
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 /**
  * Created by rissa on 11/16/2016.
  */
 public class GUI {
-    private JPanel panel1;
+    private JPanel panMainContent;
     private JButton btnselect;
     private JPanel panContent;
     private JButton btnGenerate;
+    private JScrollPane spImages;
+    private JLabel lblImageIcon;
+    private JPanel panSpaneContent;
 
     private File fdir;
     private static final int ALPHA = 5;
 
-    private ArrayList<double[]> frame_list;
+    //contains the computed distance value from compute average histogram
+    private Map<Integer,Integer> frame_list;
+    //contains the intervals for both abrupt and gradual
+    private ArrayList<Interval> interval_list;
+    private ArrayList<Integer> keyframe_index;
+    private String dir_path;
 
     //    private static final int OHM = 4000;
     public GUI() {
-        panContent.setLayout(new GridLayout(0, 6));
-        frame_list = new ArrayList<double[]>();
+
+        panContent.setLayout(new BorderLayout());
+        panContent.add(lblImageIcon, BorderLayout.CENTER);
 
         btnGenerate.addActionListener(new ActionListener() {
             @Override
@@ -32,7 +40,7 @@ public class GUI {
                 JFileChooser f = new JFileChooser();
                 f.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 
-                int num = f.showOpenDialog(panel1);
+                int num = f.showOpenDialog(panMainContent);
                 if (num == JFileChooser.APPROVE_OPTION) {
                     File dir = f.getSelectedFile();
                     File[] dirListing = dir.listFiles();
@@ -41,6 +49,8 @@ public class GUI {
                     try {
                         pw = new PrintWriter(new BufferedWriter(new FileWriter(dir.getName()+".txt", true)));
                         pw.println(dir.getPath());
+                        dir_path = dir.getPath();
+                       // System.out.println("DIR GET PATH: "+ dir.getPath());
                         pw.close();
                     } catch (IOException ex) {
                         ex.printStackTrace();
@@ -57,11 +67,18 @@ public class GUI {
             }
         });
         btnselect.addActionListener(new ActionListener() {
+
+
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                frame_list = new TreeMap<Integer, Integer>();
+                interval_list = new ArrayList<Interval>();
+                keyframe_index = new ArrayList<Integer>();
+
                 JFileChooser f = new JFileChooser();
 
-                int num = f.showOpenDialog(panel1);
+                int num = f.showOpenDialog(panMainContent);
                 if (num == JFileChooser.APPROVE_OPTION) {
                     File file = f.getSelectedFile();
                     fdir = file;
@@ -72,14 +89,14 @@ public class GUI {
 //                    if(framenum>1) {
 
                     //get Histogram of all frames
-                    ArrayList<double[]> hisList = new ArrayList<double[]>();
+                    ArrayList<Data> hisList = new ArrayList<Data>();
                     hisList = Histogram.readHistogram(fdir.getPath());
 
                     double data[] = new double[hisList.size() - 1];
                     //compute histogram difference between frames
                     for (int i = 0; i < hisList.size() - 1; i++) {
-                        double[] prevHis = hisList.get(i);
-                        double[] nextHis = hisList.get(i + 1);
+                        double[] prevHis = hisList.get(i).getHistogram();
+                        double[] nextHis = hisList.get(i + 1).getHistogram();
 
                         double sd = 0;
                         for (int j = 0; j < 159; j++) {
@@ -97,7 +114,6 @@ public class GUI {
                     double OHM = threshold / 2;
 
                     System.out.println(hisList.size() + " " + mean + " " + standev + " " + threshold);
-//                        for (int i=0; i<framenum-1;i++) System.out.println(data[i]);
 
                     ArrayList<Integer> abrupt = new ArrayList<Integer>();
                     ArrayList<int[]> gradual = new ArrayList<int[]>();
@@ -135,8 +151,8 @@ public class GUI {
                         }
                     }
 
-                    //contains the intervals for both abrupt and gradual
-                    ArrayList<Interval> interval_list = new ArrayList<Interval>();
+
+
 
                     for(int i=0; i<abrupt.size(); i++){
                         Interval interval = new Interval(abrupt.get(i), 0);
@@ -164,10 +180,7 @@ public class GUI {
 
                     //print abrupt and gradual transitions
                     System.out.println(interval_list);
-//                    for (int i = 0; i < gradual.size(); i++) {
-//                        System.out.println(gradual.get(i)[0] + " " + gradual.get(i)[1]);
-//                    }
-//
+
                     int start = 0;
                     int end = 0;
                     //start looking for the keyframes of the shots before abrupt
@@ -177,6 +190,7 @@ public class GUI {
                         if(interval_list.get(i).getEnd() == 0) {
                             end = interval_list.get(i).getStart();
                             int kframe = computeAverageHistogram(start, end, hisList);
+                            keyframe_index.add(kframe);
                             System.out.println("Keyframe Abrupt: " + kframe);
 //                            panContent.add(new JLabel());
                             start = interval_list.get(i).getStart()+1;
@@ -184,22 +198,52 @@ public class GUI {
                         else {
                             end = interval_list.get(i).getStart();
                             int kframe = computeAverageHistogram(start, end, hisList);
+                            keyframe_index.add(kframe);
                             System.out.println("Keyframe Gradual: " + kframe);
                             start = interval_list.get(i).getEnd()+1;
                         }
 
-
-
-
-
-
                     }
+
+
+                    panSpaneContent = new JPanel();
+                    panSpaneContent.setPreferredSize(new Dimension(100,120));
+                    panSpaneContent.setLayout(new BoxLayout(panSpaneContent,BoxLayout.X_AXIS));
+
+                    System.out.println("HislITS:"+ hisList.size());
+                    for(int i=0; i<hisList.size(); i++){
+                        String filePath = hisList.get(i).getFolder_path()+"\\"+ hisList.get(i).getFilename();
+
+                        JPanel imgPanel = new JPanel();
+                        imgPanel.setLayout(new BorderLayout());
+
+                        JLabel lblImageName =  new JLabel(hisList.get(i).getFilename());
+                        lblImageName.setHorizontalTextPosition(JLabel.CENTER);
+                        JLabel lblImageIcon =  new JLabel(new ImageIcon(filePath));
+
+
+                        imgPanel.add(lblImageIcon, BorderLayout.CENTER);
+                        imgPanel.add(lblImageName, BorderLayout.SOUTH);
+
+                        panSpaneContent.add(imgPanel);
+                        panSpaneContent.updateUI();
+                    }
+                   // spImages.setViewportView(panSpaneContent);
+
+                    spImages = new JScrollPane(panSpaneContent);
+                    spImages.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+                    spImages.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+                    spImages.revalidate();
+                    spImages.updateUI();
+                    panContent.add(spImages,BorderLayout.SOUTH);
+                    panContent.revalidate();
+                    panContent.updateUI();
                 }
             }
         });
     }
 
-    public int computeAverageHistogram(int start, int end, ArrayList<double[]> hsList) {
+    public int computeAverageHistogram(int start, int end, ArrayList<Data> hsList) {
         int keyframe_file = 0;
         double average_histogram[] = new double[159];
 
@@ -207,7 +251,7 @@ public class GUI {
         for (int i = 0; i < 159; i++) {
 
             for (int j = start; j < end; j++)
-                average_histogram[i] += hsList.get(j)[i];
+                average_histogram[i] += hsList.get(j).getHistogram()[i];
 
             average_histogram[i] /= 159;
           //  System.out.println("avg histo: "+ average_histogram[i]);
@@ -221,8 +265,9 @@ public class GUI {
             double temp_distance = 0;
 
             for (int j = 0; j < 159; j++)
-                temp_distance += Math.abs(hsList.get(i)[j] - average_histogram[j]);
+                temp_distance += Math.abs(hsList.get(i).getHistogram()[j] - average_histogram[j]);
 
+            frame_list.put(i,(int) Math.floor(temp_distance));
         //    System.out.println("temp distance: "+ temp_distance);
 
             if ( min_distance==-1 || temp_distance <= min_distance) {
@@ -238,10 +283,14 @@ public class GUI {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("GUI");
-        frame.setContentPane(new GUI().panel1);
+        frame.setContentPane(new GUI().panMainContent);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        frame.pack();
         frame.setSize(new Dimension(1000, 800));
         frame.setVisible(true);
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }

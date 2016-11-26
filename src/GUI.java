@@ -2,7 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -14,14 +17,26 @@ public class GUI {
     private JPanel panContent;
     private JButton btnGenerate;
     private JScrollPane spImages;
-    private JLabel lblImageIcon;
+    private JLabel lblImage;
+    private JPanel panInfo;
+    private JPanel panLegend;
+    private JLabel lblKeyframe;
+    private JPanel panKeyFrame;
+    private JPanel panGradual;
+    private JLabel lblGradual;
+    private JPanel panAbrupt;
+    private JLabel lblAbrupt;
+    private JPanel panResult;
+    private JLabel lblAbruptResults;
+    private JLabel lblGradualResults;
+    private JLabel lblKeyframeResults;
     private JPanel panSpaneContent;
 
     private File fdir;
     private static final int ALPHA = 5;
 
     //contains the computed distance value from compute average histogram
-    private Map<Integer,Integer> frame_list;
+    private ArrayList<Integer> gradual_list;
     //contains the intervals for both abrupt and gradual
     private ArrayList<Interval> interval_list;
     private ArrayList<Integer> keyframe_index;
@@ -31,7 +46,7 @@ public class GUI {
     public GUI() {
 
         panContent.setLayout(new BorderLayout());
-        panContent.add(lblImageIcon, BorderLayout.CENTER);
+        panContent.add(panInfo, BorderLayout.NORTH);
 
         btnGenerate.addActionListener(new ActionListener() {
             @Override
@@ -71,7 +86,7 @@ public class GUI {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                frame_list = new TreeMap<Integer, Integer>();
+                gradual_list = new ArrayList<Integer>();
                 interval_list = new ArrayList<Interval>();
                 keyframe_index = new ArrayList<Integer>();
 
@@ -152,16 +167,40 @@ public class GUI {
 
 
 
-
+                    String temp = "Abrupt Frames: ";
                     for(int i=0; i<abrupt.size(); i++){
                         Interval interval = new Interval(abrupt.get(i), 0);
+                        temp += abrupt.get(i);
+
+                        if(i != abrupt.size()-1)
+                            temp += " , ";
+
                         interval_list.add(interval);
                     }
 
+                    lblAbruptResults.setText(temp);
+                    lblAbruptResults.revalidate();
+                    lblAbruptResults.updateUI();
+
+
+                    temp = "Gradual Boundaries: ";
                     for(int i=0; i<gradual.size(); i++){
                         Interval interval = new Interval(gradual.get(i)[0], gradual.get(i)[1]);
+
+                        temp += gradual.get(i)[0]+"-"+gradual.get(i)[1];
+
+                        for(int j = gradual.get(i)[0]; j<= gradual.get(i)[1]; j++)
+                            gradual_list.add(j);
+
+                        if(i != gradual.size()-1)
+                            temp += " , ";
+
                         interval_list.add(interval);
                     }
+
+                    lblGradualResults.setText(temp);
+                    lblGradualResults.revalidate();
+                    lblGradualResults.updateUI();
 
                     interval_list.add(new Interval(hisList.size(),0));
 
@@ -182,13 +221,16 @@ public class GUI {
 
                     int start = 0;
                     int end = 0;
+
+                    temp = "Keyframes: ";
+                    int kframe;
                     //start looking for the keyframes of the shots before abrupt
                     for (int i = 0; i < interval_list.size(); i++) {
 
 
                         if(interval_list.get(i).getEnd() == 0) {
                             end = interval_list.get(i).getStart();
-                            int kframe = computeAverageHistogram(start, end, hisList);
+                            kframe = computeAverageHistogram(start, end, hisList);
                             keyframe_index.add(kframe);
                             System.out.println("Keyframe Abrupt: " + kframe);
 //                            panContent.add(new JLabel());
@@ -196,20 +238,30 @@ public class GUI {
                         }
                         else {
                             end = interval_list.get(i).getStart();
-                            int kframe = computeAverageHistogram(start, end, hisList);
+                            kframe = computeAverageHistogram(start, end, hisList);
                             keyframe_index.add(kframe);
                             System.out.println("Keyframe Gradual: " + kframe);
                             start = interval_list.get(i).getEnd()+1;
                         }
 
+                        temp+= kframe;
+
+                        if(i != interval_list.size()-1)
+                            temp += " , ";
+
                     }
 
+                    lblKeyframeResults.setText(temp);
+                    lblKeyframeResults.revalidate();
+                    lblKeyframeResults.updateUI();
 
                     panSpaneContent = new JPanel();
-//                    panSpaneContent.setPreferredSize(new Dimension(100,120));
-                    panSpaneContent.setLayout(new BoxLayout(panSpaneContent,BoxLayout.X_AXIS));
+                    panSpaneContent.setSize(300,300);
+                    panSpaneContent.setLayout(new GridLayout(0,4));
+                    //panSpaneContent.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 
-                    System.out.println("HislITS:"+ hisList.size());
+                   // panSpaneContent.setLayout(new BoxLayout(panSpaneContent,BoxLayout.X_AXIS));
+
                     int width = 0;
                     for(int i=0; i<hisList.size(); i++){
                         String filePath = hisList.get(i).getFolder_path()+"\\"+ hisList.get(i).getFilename();
@@ -218,27 +270,41 @@ public class GUI {
                         imgPanel.setLayout(new BorderLayout());
 
                         JLabel lblImageName =  new JLabel(hisList.get(i).getFilename());
-                        lblImageName.setHorizontalTextPosition(JLabel.CENTER);
-                        JLabel lblImageIcon =  new JLabel(new ImageIcon(filePath));
+                        if(keyframe_index.contains(i)) {
+                            lblImageName.setBackground(Color.BLUE);
+                            lblImageName.setForeground(Color.WHITE);
+                        }else if(abrupt.contains(i)){
+                            lblImageName.setBackground(Color.RED);
+                            lblImageName.setForeground(Color.WHITE);
+                        }else if(gradual_list.contains(i)){
+                            lblImageName.setBackground(Color.GREEN);
+                            lblImageName.setForeground(Color.WHITE);
+                        }
 
-                        width += lblImageIcon.getIcon().getIconWidth();
+                        lblImageName.setOpaque(true);
+                        lblImageName.revalidate();
+                        lblImageName.updateUI();
 
+                        JButton btnImageIcon =  new JButton(new ImageIcon(filePath));
+                        btnImageIcon.setBackground(Color.WHITE);
+                        width += btnImageIcon.getIcon().getIconWidth();
 
-                        imgPanel.add(lblImageIcon, BorderLayout.CENTER);
+                        imgPanel.add(btnImageIcon, BorderLayout.CENTER);
                         imgPanel.add(lblImageName, BorderLayout.SOUTH);
 
                         panSpaneContent.add(imgPanel);
-                        panSpaneContent.updateUI();
                     }
-                    panSpaneContent.setPreferredSize(new Dimension(width, 120));
+
+                    panSpaneContent.updateUI();
+                   // panSpaneContent.setPreferredSize(new Dimension(width, 120));
                    // spImages.setViewportView(panSpaneContent);
 
                     spImages = new JScrollPane(panSpaneContent);
-                    spImages.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-                    spImages.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
+                    spImages.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+                    spImages.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
                     spImages.revalidate();
                     spImages.updateUI();
-                    panContent.add(spImages,BorderLayout.SOUTH);
+                    panContent.add(spImages,BorderLayout.CENTER);
                     panContent.revalidate();
                     panContent.updateUI();
                 }
@@ -270,7 +336,6 @@ public class GUI {
             for (int j = 0; j < 159; j++)
                 temp_distance += Math.abs(hsList.get(i).getHistogram()[j] - average_histogram[j]);
 
-            frame_list.put(i,(int) Math.floor(temp_distance));
         //    System.out.println("temp distance: "+ temp_distance);
 
             if ( min_distance==-1 || temp_distance <= min_distance) {

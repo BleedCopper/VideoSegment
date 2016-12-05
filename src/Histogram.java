@@ -39,7 +39,7 @@ public class Histogram {
 
                 String filename = line;
                 line = br.readLine();
-                System.out.println(line);
+//                System.out.println(line);
                 String[] stringArrayOfHistogramValues = line.split(" ");
                 double[] histogram = new double[159];
                 int i=0;

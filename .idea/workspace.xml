@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0cff547-2396-4e88-96ab-e53d8a5e0600" name="Default" comment="">
+<<<<<<< HEAD
       <change type="DELETED" beforePath="$PROJECT_DIR$/mjack.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/videosegment/GUI$2$1.class" afterPath="$PROJECT_DIR$/out/production/videosegment/GUI$2$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/videosegment/GUI$2.class" afterPath="$PROJECT_DIR$/out/production/videosegment/GUI$2.class" />
@@ -10,6 +11,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/777.txt" afterPath="$PROJECT_DIR$/777.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI.java" afterPath="$PROJECT_DIR$/src/GUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uni.txt" afterPath="$PROJECT_DIR$/uni.txt" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/videosegment/GUI$2.class" afterPath="$PROJECT_DIR$/out/production/videosegment/GUI$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/videosegment/GUI.class" afterPath="$PROJECT_DIR$/out/production/videosegment/GUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI.java" afterPath="$PROJECT_DIR$/src/GUI.java" />
+>>>>>>> origin/master
     </list>
     <ignored path="videosegment.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,10 +41,17 @@
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="695">
               <caret line="265" column="60" selection-start-line="265" selection-start-column="60" selection-end-line="265" selection-end-column="60" />
+=======
+            <state vertical-scroll-proportion="0.65991473">
+              <caret line="160" column="42" selection-start-line="160" selection-start-column="42" selection-end-line="160" selection-end-column="42" />
+>>>>>>> origin/master
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#actionPerformed#0;class#1482:2744" expanded="true" />
+                <element signature="method#computeAverageHistogram#0;class#GUI#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,10 +59,97 @@
       </file>
       <file leaf-file-name="777.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/777.txt">
+<<<<<<< HEAD
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="4" column="120" selection-start-line="4" selection-start-column="120" selection-end-line="4" selection-end-column="120" />
               <folding />
+=======
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uni.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uni.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mjack.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mjack.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Double.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/lang/Double.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="537" column="0" selection-start-line="537" selection-start-column="0" selection-end-line="537" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#41182#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#7471#7472#0" expanded="false" />
+                <element signature="e#7531#7532#0" expanded="false" />
+                <element signature="method#toHexString#0;class#Double#0" expanded="false" />
+                <element signature="method#valueOf#0;class#Double#0" expanded="false" />
+                <element signature="e#20934#20935#0" expanded="false" />
+                <element signature="e#20970#20971#0" expanded="false" />
+                <element signature="e#22024#22025#0" expanded="false" />
+                <element signature="e#22055#22056#0" expanded="false" />
+                <element signature="e#22432#22433#0" expanded="false" />
+                <element signature="e#22507#22508#0" expanded="false" />
+                <element signature="e#22918#22919#0" expanded="false" />
+                <element signature="e#22978#22979#0" expanded="false" />
+                <element signature="e#23334#23335#0" expanded="false" />
+                <element signature="e#23368#23369#0" expanded="false" />
+                <element signature="method#Double#1;class#Double#0" expanded="false" />
+                <element signature="e#24265#24266#0" expanded="false" />
+                <element signature="e#24300#24301#0" expanded="false" />
+                <element signature="e#24650#24651#0" expanded="false" />
+                <element signature="e#24690#24691#0" expanded="false" />
+                <element signature="e#25095#25096#0" expanded="false" />
+                <element signature="e#25133#25134#0" expanded="false" />
+                <element signature="e#25486#25487#0" expanded="false" />
+                <element signature="e#25520#25521#0" expanded="false" />
+                <element signature="e#25877#25878#0" expanded="false" />
+                <element signature="e#25912#25913#0" expanded="false" />
+                <element signature="e#26241#26242#0" expanded="false" />
+                <element signature="e#26274#26275#0" expanded="false" />
+                <element signature="e#26606#26607#0" expanded="false" />
+                <element signature="e#26640#26641#0" expanded="false" />
+                <element signature="e#26997#26998#0" expanded="false" />
+                <element signature="e#27032#27033#0" expanded="false" />
+                <element signature="e#27228#27229#0" expanded="false" />
+                <element signature="e#27256#27257#0" expanded="false" />
+                <element signature="e#28029#28030#0" expanded="false" />
+                <element signature="e#28074#28075#0" expanded="false" />
+                <element signature="method#hashCode#1;class#Double#0" expanded="false" />
+                <element signature="method#equals#0;class#Double#0" expanded="false" />
+                <element signature="method#doubleToLongBits#0;class#Double#0" expanded="false" />
+                <element signature="e#38307#38308#0" expanded="false" />
+                <element signature="e#38372#38373#0" expanded="false" />
+                <element signature="method#compare#0;class#Double#0" expanded="false" />
+                <element signature="e#40164#40165#0" expanded="false" />
+                <element signature="e#40192#40193#0" expanded="false" />
+                <element signature="e#40577#40578#0" expanded="false" />
+                <element signature="e#40614#40615#0" expanded="false" />
+                <element signature="e#41000#41001#0" expanded="false" />
+                <element signature="e#41037#41038#0" expanded="false" />
+              </folding>
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
@@ -56,9 +157,17 @@
       <file leaf-file-name="Histogram.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Histogram.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="629">
               <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
               <folding />
+=======
+            <state vertical-scroll-proportion="0.0">
+              <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
+              <folding>
+                <element signature="method#computeHistogram#0;class#Histogram#0" expanded="true" />
+              </folding>
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
@@ -88,6 +197,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
               <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Data.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Data.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -124,9 +243,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Statistics.java" />
-        <option value="$PROJECT_DIR$/src/Histogram.java" />
         <option value="$PROJECT_DIR$/mjack.txt" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/GUI.form" />
+=======
+        <option value="$PROJECT_DIR$/777.txt" />
+        <option value="$PROJECT_DIR$/src/Histogram.java" />
+>>>>>>> origin/master
         <option value="$PROJECT_DIR$/src/GUI.java" />
       </list>
     </option>
@@ -167,6 +290,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -241,9 +367,12 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
+=======
+>>>>>>> origin/master
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -549,14 +678,20 @@
       <workItem from="1480153752768" duration="1014000" />
       <workItem from="1480155268020" duration="777000" />
       <workItem from="1480157416681" duration="566000" />
+      <workItem from="1480934828497" duration="6149000" />
+      <workItem from="1480952642200" duration="4543000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20079000" />
+    <option name="totallyTimeSpent" value="30771000" />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+=======
+    <frame x="-12" y="-12" width="3224" height="1754" extended-state="7" />
+>>>>>>> origin/master
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -568,12 +703,22 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11456628" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296417" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/master
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1732224" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17839608" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.102367245" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/master
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -653,6 +798,144 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#actionPerformed#0;class#1482:2744" expanded="true" />
+            <element signature="method#computeAverageHistogram#0;class#GUI#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/777.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uni.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mjack.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/lang/Double.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="537" column="0" selection-start-line="537" selection-start-column="0" selection-end-line="537" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41182#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7471#7472#0" expanded="false" />
+            <element signature="e#7531#7532#0" expanded="false" />
+            <element signature="method#toHexString#0;class#Double#0" expanded="false" />
+            <element signature="method#valueOf#0;class#Double#0" expanded="false" />
+            <element signature="e#20934#20935#0" expanded="false" />
+            <element signature="e#20970#20971#0" expanded="false" />
+            <element signature="e#22024#22025#0" expanded="false" />
+            <element signature="e#22055#22056#0" expanded="false" />
+            <element signature="e#22432#22433#0" expanded="false" />
+            <element signature="e#22507#22508#0" expanded="false" />
+            <element signature="e#22918#22919#0" expanded="false" />
+            <element signature="e#22978#22979#0" expanded="false" />
+            <element signature="e#23334#23335#0" expanded="false" />
+            <element signature="e#23368#23369#0" expanded="false" />
+            <element signature="method#Double#1;class#Double#0" expanded="false" />
+            <element signature="e#24265#24266#0" expanded="false" />
+            <element signature="e#24300#24301#0" expanded="false" />
+            <element signature="e#24650#24651#0" expanded="false" />
+            <element signature="e#24690#24691#0" expanded="false" />
+            <element signature="e#25095#25096#0" expanded="false" />
+            <element signature="e#25133#25134#0" expanded="false" />
+            <element signature="e#25486#25487#0" expanded="false" />
+            <element signature="e#25520#25521#0" expanded="false" />
+            <element signature="e#25877#25878#0" expanded="false" />
+            <element signature="e#25912#25913#0" expanded="false" />
+            <element signature="e#26241#26242#0" expanded="false" />
+            <element signature="e#26274#26275#0" expanded="false" />
+            <element signature="e#26606#26607#0" expanded="false" />
+            <element signature="e#26640#26641#0" expanded="false" />
+            <element signature="e#26997#26998#0" expanded="false" />
+            <element signature="e#27032#27033#0" expanded="false" />
+            <element signature="e#27228#27229#0" expanded="false" />
+            <element signature="e#27256#27257#0" expanded="false" />
+            <element signature="e#28029#28030#0" expanded="false" />
+            <element signature="e#28074#28075#0" expanded="false" />
+            <element signature="method#hashCode#1;class#Double#0" expanded="false" />
+            <element signature="method#equals#0;class#Double#0" expanded="false" />
+            <element signature="method#doubleToLongBits#0;class#Double#0" expanded="false" />
+            <element signature="e#38307#38308#0" expanded="false" />
+            <element signature="e#38372#38373#0" expanded="false" />
+            <element signature="method#compare#0;class#Double#0" expanded="false" />
+            <element signature="e#40164#40165#0" expanded="false" />
+            <element signature="e#40192#40193#0" expanded="false" />
+            <element signature="e#40577#40578#0" expanded="false" />
+            <element signature="e#40614#40615#0" expanded="false" />
+            <element signature="e#41000#41001#0" expanded="false" />
+            <element signature="e#41037#41038#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Histogram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+          <folding>
+            <element signature="method#computeHistogram#0;class#Histogram#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cieConvert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#actionPerformed#0;class#1482:2744" expanded="true" />
+            <element signature="method#computeAverageHistogram#0;class#GUI#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -703,6 +986,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#actionPerformed#0;class#1482:2744" expanded="true" />
+            <element signature="method#computeAverageHistogram#0;class#GUI#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -823,6 +1108,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#actionPerformed#0;class#1482:2744" expanded="true" />
+            <element signature="method#computeAverageHistogram#0;class#GUI#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -857,6 +1144,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#actionPerformed#0;class#1482:2744" expanded="true" />
+            <element signature="method#computeAverageHistogram#0;class#GUI#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -891,6 +1180,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#actionPerformed#0;class#1482:2744" expanded="true" />
+            <element signature="method#computeAverageHistogram#0;class#GUI#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -925,6 +1216,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#actionPerformed#0;class#1482:2744" expanded="true" />
+            <element signature="method#computeAverageHistogram#0;class#GUI#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -979,6 +1272,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/lang/Double.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="537" column="0" selection-start-line="537" selection-start-column="0" selection-end-line="537" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41182#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7471#7472#0" expanded="false" />
+            <element signature="e#7531#7532#0" expanded="false" />
+            <element signature="method#toHexString#0;class#Double#0" expanded="false" />
+            <element signature="method#valueOf#0;class#Double#0" expanded="false" />
+            <element signature="e#20934#20935#0" expanded="false" />
+            <element signature="e#20970#20971#0" expanded="false" />
+            <element signature="e#22024#22025#0" expanded="false" />
+            <element signature="e#22055#22056#0" expanded="false" />
+            <element signature="e#22432#22433#0" expanded="false" />
+            <element signature="e#22507#22508#0" expanded="false" />
+            <element signature="e#22918#22919#0" expanded="false" />
+            <element signature="e#22978#22979#0" expanded="false" />
+            <element signature="e#23334#23335#0" expanded="false" />
+            <element signature="e#23368#23369#0" expanded="false" />
+            <element signature="method#Double#1;class#Double#0" expanded="false" />
+            <element signature="e#24265#24266#0" expanded="false" />
+            <element signature="e#24300#24301#0" expanded="false" />
+            <element signature="e#24650#24651#0" expanded="false" />
+            <element signature="e#24690#24691#0" expanded="false" />
+            <element signature="e#25095#25096#0" expanded="false" />
+            <element signature="e#25133#25134#0" expanded="false" />
+            <element signature="e#25486#25487#0" expanded="false" />
+            <element signature="e#25520#25521#0" expanded="false" />
+            <element signature="e#25877#25878#0" expanded="false" />
+            <element signature="e#25912#25913#0" expanded="false" />
+            <element signature="e#26241#26242#0" expanded="false" />
+            <element signature="e#26274#26275#0" expanded="false" />
+            <element signature="e#26606#26607#0" expanded="false" />
+            <element signature="e#26640#26641#0" expanded="false" />
+            <element signature="e#26997#26998#0" expanded="false" />
+            <element signature="e#27032#27033#0" expanded="false" />
+            <element signature="e#27228#27229#0" expanded="false" />
+            <element signature="e#27256#27257#0" expanded="false" />
+            <element signature="e#28029#28030#0" expanded="false" />
+            <element signature="e#28074#28075#0" expanded="false" />
+            <element signature="method#hashCode#1;class#Double#0" expanded="false" />
+            <element signature="method#equals#0;class#Double#0" expanded="false" />
+            <element signature="method#doubleToLongBits#0;class#Double#0" expanded="false" />
+            <element signature="e#38307#38308#0" expanded="false" />
+            <element signature="e#38372#38373#0" expanded="false" />
+            <element signature="method#compare#0;class#Double#0" expanded="false" />
+            <element signature="e#40164#40165#0" expanded="false" />
+            <element signature="e#40192#40193#0" expanded="false" />
+            <element signature="e#40577#40578#0" expanded="false" />
+            <element signature="e#40614#40615#0" expanded="false" />
+            <element signature="e#41000#41001#0" expanded="false" />
+            <element signature="e#41037#41038#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Image.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -989,39 +1340,78 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cieConvert.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
+=======
+        <state vertical-scroll-proportion="0.0">
+>>>>>>> origin/master
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/out/production/videosegment/GUI.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+>>>>>>> origin/master
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mjack.txt">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="425">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+=======
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="35" />
+>>>>>>> origin/master
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/777.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="120" selection-start-line="4" selection-start-column="120" selection-end-line="4" selection-end-column="120" />
+=======
+    <entry file="file://$PROJECT_DIR$/uni.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> origin/master
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/GUI.form">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1049">
+          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+=======
+    <entry file="file://$PROJECT_DIR$/777.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/777.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="120" selection-start-line="4" selection-start-column="120" selection-end-line="4" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI.form">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1049">
-          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
@@ -1029,12 +1419,29 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Histogram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="41" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
+          <folding>
+            <element signature="method#computeHistogram#0;class#Histogram#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="695">
           <caret line="265" column="60" selection-start-line="265" selection-start-column="60" selection-end-line="265" selection-end-column="60" />
+=======
+        <state vertical-scroll-proportion="0.65991473">
+          <caret line="160" column="42" selection-start-line="160" selection-start-column="42" selection-end-line="160" selection-end-column="42" />
+>>>>>>> origin/master
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#actionPerformed#0;class#1482:2744" expanded="true" />
+            <element signature="method#computeAverageHistogram#0;class#GUI#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0cff547-2396-4e88-96ab-e53d8a5e0600" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/videosegment/GUI$2$1.class" afterPath="$PROJECT_DIR$/out/production/videosegment/GUI$2$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/videosegment/GUI$2.class" afterPath="$PROJECT_DIR$/out/production/videosegment/GUI$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/videosegment/GUI.class" afterPath="$PROJECT_DIR$/out/production/videosegment/GUI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/videosegment/Histogram.class" afterPath="$PROJECT_DIR$/out/production/videosegment/Histogram.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI.java" afterPath="$PROJECT_DIR$/src/GUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Histogram.java" afterPath="$PROJECT_DIR$/src/Histogram.java" />
     </list>
     <ignored path="videosegment.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,8 +31,8 @@
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47441363">
-              <caret line="159" column="58" selection-start-line="159" selection-start-column="58" selection-end-line="160" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.10341151">
+              <caret line="126" column="48" selection-start-line="126" selection-start-column="48" selection-end-line="126" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#actionPerformed#0;class#1482:2744" expanded="true" />
@@ -785,12 +782,12 @@
       <workItem from="1480155268020" duration="777000" />
       <workItem from="1480157416681" duration="566000" />
       <workItem from="1480934828497" duration="6149000" />
-      <workItem from="1480952642200" duration="1467000" />
+      <workItem from="1480952642200" duration="2398000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27695000" />
+    <option name="totallyTimeSpent" value="28626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="3216" height="1754" extended-state="0" />
@@ -1368,8 +1365,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47441363">
-          <caret line="159" column="58" selection-start-line="159" selection-start-column="58" selection-end-line="160" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.10341151">
+          <caret line="126" column="48" selection-start-line="126" selection-start-column="48" selection-end-line="126" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#actionPerformed#0;class#1482:2744" expanded="true" />

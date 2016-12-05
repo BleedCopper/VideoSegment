@@ -124,7 +124,7 @@ public class GUI {
                     double mean = stat.getMean();
                     double standev = stat.getStdDev();
                     double threshold = mean + (ALPHA * standev);
-                    double OHM = threshold * 0.35;
+                    double OHM = threshold * 0.3;
 
                     System.out.println(hisList.size() + " " + mean + " " + standev + " " + threshold);
 
@@ -138,7 +138,7 @@ public class GUI {
 
                         //use lower threshold to detect gradual transitions
                         else if (data[i] > OHM && i < hisList.size() - 1) {
-
+                            System.out.println(i);
                             //check if current frame belongs to an existing gradual transition, otherwise, test if it can be the start of a gradual transition
                             if (gradual.size() == 0 || gradual.get(gradual.size() - 1)[1] < i) {
 
@@ -152,7 +152,7 @@ public class GUI {
                                     //three frame leeway
                                     if (data[j] <= OHM) {
                                         seg++;
-                                        tempsum+=seg;
+                                        tempsum+=data[j];
                                     }else {
 //                                        seg=0;
 //                                        tempsum=0;
@@ -169,8 +169,8 @@ public class GUI {
 
                                 //accumulated difference must be above the upper threshold to be considered as gradual transition
                                 if (sum > threshold) {
-                                    if(tempsum>0) gradual.add(new int[]{i, j-tolerance});
-                                    else gradual.add(new int[]{i, j});
+                                    if(tempsum>0) gradual.add(new int[]{i, j-tolerance-1});
+                                    else gradual.add(new int[]{i, j-1});
                                 }
                             }
                         }

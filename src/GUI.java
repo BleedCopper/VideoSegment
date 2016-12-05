@@ -2,11 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.io.*;
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Created by rissa on 11/16/2016.
@@ -33,7 +32,7 @@ public class GUI {
     private JPanel panSpaneContent;
 
     private File fdir;
-    private static final int ALPHA = 5;
+    private static final double ALPHA = 5.5;
 
     //contains the computed distance value from compute average histogram
     private ArrayList<Integer> gradual_list;
@@ -125,7 +124,7 @@ public class GUI {
                     double mean = stat.getMean();
                     double standev = stat.getStdDev();
                     double threshold = mean + (ALPHA * standev);
-                    double OHM = threshold / 2;
+                    double OHM = threshold * 0.35;
 
                     System.out.println(hisList.size() + " " + mean + " " + standev + " " + threshold);
 
@@ -146,20 +145,33 @@ public class GUI {
                                 int seg = 0;
                                 int j = i + 1;
                                 double sum = data[i];
+                                double tempsum = 0;
+                                int tolerance = 3;
+                                int tolframe =0;
                                 //next frames must remain above the lower threshold. Leeway of three frames
-                                while (j < hisList.size() - 1 && (data[j] > OHM || seg < 3)) {
+                                while (j < hisList.size() - 1 && (data[j] > OHM || seg < tolerance)) {
                                     //three frame leeway
-                                    if (data[j] <= OHM)
+                                    if (data[j] <= OHM) {
                                         seg++;
-
+                                        tempsum+=seg;
+                                    }else {
+//                                        seg=0;
+//                                        tempsum=0;
+                                        if(seg>0){
+                                            tolframe=seg;
+                                            seg=tolerance;
+                                            tempsum=0;
+                                        }
+                                    }
                                     //accumulate the histogram difference
-                                    if (seg < 4) sum += data[j];
+                                    if (seg < tolerance+1) sum += data[j];
                                     j++;
                                 }
+                                sum-=tempsum;
 
                                 //accumulated difference must be above the upper threshold to be considered as gradual transition
                                 if (sum > threshold) {
-                                    gradual.add(new int[]{i, j});
+                                    gradual.add(new int[]{i, j-tolframe});
                                 }
                             }
                         }

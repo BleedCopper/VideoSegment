@@ -1,0 +1,11 @@
+INSTRUCTIONS
+
+Running the program
+	1. Run videosegment.jar
+
+Using the program
+	1. Generating Video Histogram Text File
+		The program needs to generate the histogram text file to be analyzed. Click the generate button and select the folder of the jpeg files. The system will take some time to generate the text file which will be stored in the project's folder.
+
+	2. Analyzing Histogram File
+		Select the text file corresponding to the video. The system will show the list of keyframes and the gradual and abrupt transitions.

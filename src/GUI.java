@@ -147,7 +147,6 @@ public class GUI {
                                 double sum = data[i];
                                 double tempsum = 0;
                                 int tolerance = 3;
-                                int tolframe =0;
                                 //next frames must remain above the lower threshold. Leeway of three frames
                                 while (j < hisList.size() - 1 && (data[j] > OHM || seg < tolerance)) {
                                     //three frame leeway
@@ -158,7 +157,6 @@ public class GUI {
 //                                        seg=0;
 //                                        tempsum=0;
                                         if(seg>0){
-                                            tolframe=seg;
                                             seg=tolerance;
                                             tempsum=0;
                                         }
@@ -171,7 +169,8 @@ public class GUI {
 
                                 //accumulated difference must be above the upper threshold to be considered as gradual transition
                                 if (sum > threshold) {
-                                    gradual.add(new int[]{i, j-tolframe});
+                                    if(tempsum>0) gradual.add(new int[]{i, j-tolerance});
+                                    else gradual.add(new int[]{i, j});
                                 }
                             }
                         }

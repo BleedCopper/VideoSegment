@@ -154,12 +154,12 @@ public class GUI {
                                         seg++;
                                         tempsum+=data[j];
                                     }else {
-//                                        seg=0;
-//                                        tempsum=0;
-                                        if(seg>0){
-                                            seg=tolerance;
-                                            tempsum=0;
-                                        }
+                                        seg=0;
+                                        tempsum=0;
+//                                        if(seg>0){
+//                                            seg=tolerance;
+//                                            tempsum=0;
+//                                        }
                                     }
                                     //accumulate the histogram difference
                                     if (seg < tolerance+1) sum += data[j];

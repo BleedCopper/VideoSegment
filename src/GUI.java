@@ -89,6 +89,8 @@ public class GUI {
                 interval_list = new ArrayList<Interval>();
                 keyframe_index = new ArrayList<Integer>();
 
+
+
                 JFileChooser f = new JFileChooser();
 
                 int num = f.showOpenDialog(panMainContent);
@@ -124,6 +126,7 @@ public class GUI {
                     double mean = stat.getMean();
                     double standev = stat.getStdDev();
                     double threshold = mean + (ALPHA * standev);
+
                     double OHM = threshold * 0.3;
 
                     System.out.println(hisList.size() + " " + mean + " " + standev + " " + threshold);
@@ -152,6 +155,7 @@ public class GUI {
                                     //three frame leeway
                                     if (data[j] <= OHM) {
                                         seg++;
+
                                         tempsum+=data[j];
                                     }else {
                                         seg=0;
@@ -161,6 +165,7 @@ public class GUI {
 //                                            tempsum=0;
 //                                        }
                                     }
+
                                     //accumulate the histogram difference
                                     if (seg < tolerance+1) sum += data[j];
                                     j++;
@@ -306,6 +311,7 @@ public class GUI {
                         panSpaneContent.add(imgPanel);
                     }
 
+                    panSpaneContent.revalidate();
                     panSpaneContent.updateUI();
                    // panSpaneContent.setPreferredSize(new Dimension(width, 120));
                    // spImages.setViewportView(panSpaneContent);
@@ -315,6 +321,8 @@ public class GUI {
                     spImages.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
                     spImages.revalidate();
                     spImages.updateUI();
+
+
                     panContent.add(spImages,BorderLayout.CENTER);
                     panContent.revalidate();
                     panContent.updateUI();

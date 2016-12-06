@@ -29,7 +29,7 @@ public class GUI {
     private JLabel lblAbruptResults;
     private JLabel lblGradualResults;
     private JLabel lblKeyframeResults;
-    private JPanel panSpaneContent;
+    private JPanel panTempContent;
 
     private File fdir;
     private static final double ALPHA = 5.5;
@@ -45,7 +45,9 @@ public class GUI {
     public GUI() {
 
         panContent.setLayout(new BorderLayout());
+        panTempContent.setLayout(new BorderLayout());
         panContent.add(panInfo, BorderLayout.NORTH);
+        panContent.add(panTempContent, BorderLayout.CENTER);
 
         btnGenerate.addActionListener(new ActionListener() {
             @Override
@@ -89,7 +91,7 @@ public class GUI {
                 interval_list = new ArrayList<Interval>();
                 keyframe_index = new ArrayList<Integer>();
 
-
+                panTempContent.removeAll();
 
                 JFileChooser f = new JFileChooser();
 
@@ -271,7 +273,7 @@ public class GUI {
                     lblKeyframeResults.revalidate();
                     lblKeyframeResults.updateUI();
 
-                    panSpaneContent = new JPanel();
+                    JPanel panSpaneContent = new JPanel();
                     panSpaneContent.setSize(300,300);
                     panSpaneContent.setLayout(new GridLayout(0,4));
                     //panSpaneContent.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
@@ -322,8 +324,8 @@ public class GUI {
                     spImages.revalidate();
                     spImages.updateUI();
 
+                    panTempContent.add(spImages,BorderLayout.CENTER);
 
-                    panContent.add(spImages,BorderLayout.CENTER);
                     panContent.revalidate();
                     panContent.updateUI();
                 }
